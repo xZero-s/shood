@@ -10,22 +10,55 @@ class LoginScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
-        children: const <Widget>[
+        children: <Widget>[
           Flexible(
             flex: 2,
-            child: IconTitle(
-              title: 'Shood App',
-              uriImage: 'assets/images/placeholder_image_logo.png',
+            child: Container(
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                color: Colors.purple
+              ),
+              child: const IconTitle(
+                title: 'Shood App',
+                uriImage: 'assets/images/placeholder_image_logo.png',
+              ),
             ),
           ),
           Flexible(
             flex: 2,
-            child: Text(
-              'PAYOFF APP'
+            child: Container(
+              width: double.infinity,
+              height: double.infinity,
+              decoration: const BoxDecoration(
+                color: Colors.orange
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const <Widget>[
+                  Text(
+                    'PAYOFF APP',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      decoration: TextDecoration.none,
+                      fontSize: 50,
+                    ),
+                  ),
+                ],
+              ),
             )
           ),
-          DefaultButton(
-            text: 'Login',
+          Flexible(
+            flex: 1,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const <Widget>[
+                DefaultButton(
+                  text: 'Login',
+                ),
+              ],
+            ),
           )
         ]
       )

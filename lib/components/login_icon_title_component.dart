@@ -9,16 +9,33 @@ class IconTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Container(
-            margin: const EdgeInsets.all(100.0),
-            decoration: const BoxDecoration(
-                color: Colors.blue,
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                    image: AssetImage(
-                        'assets/images/placeholder_image_logo.png')))),
-        Text(title),
+          width: 100.0,
+          height: 100.0,
+          margin: const EdgeInsets.only(bottom: 25),
+          decoration: const BoxDecoration(
+            color: Colors.blue,
+            shape: BoxShape.circle,
+            image: DecorationImage(
+              image: AssetImage(
+                  'assets/images/placeholder_image_logo.png'),
+              fit: BoxFit.cover
+            ),
+          )
+        ),
+        Text(
+          title,
+          textAlign: TextAlign.center,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+            decoration: TextDecoration.none,
+            fontSize: 30,
+          ),
+        ),
       ],
     );
   }
