@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class IconTitle extends StatelessWidget {
   final String title;
   final String uriImage;

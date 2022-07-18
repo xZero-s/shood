@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shood/screens/login_screen.dart';
+import 'package:shood/screens/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const LoginScreen() //const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const SplashScreen() //const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
