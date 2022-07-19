@@ -17,37 +17,44 @@ class _SplashScreenState extends State<SplashScreen> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      body: Column(
-        children: <Widget>[
-          Container(
-            height: 700,
-            margin: const EdgeInsets.symmetric(vertical: 25.0, horizontal: 30.0),
-            decoration: const BoxDecoration(color: Colors.green),
-            child: PageView.builder(
-              onPageChanged: (index) {
-                setState(() {
-                  _selectedIndex = index;
-                });
-              },
-              controller: PageController(viewportFraction: 0.7),
-              itemCount: cardItemsList.length,
-              itemBuilder: ((context, index) {
-                // return BannerItem(appBanner: cardItemsList[index]);
-                return BannerItem(cardItem: cardItemsList[index]);
-              }),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: const BoxDecoration(
+          color: Colors.purpleAccent
+        ),
+        child: Column(
+          children: <Widget>[
+            Container(
+              height: 700,
+              margin: const EdgeInsets.symmetric(vertical: 25.0, horizontal: 30.0),
+              decoration: const BoxDecoration(color: Colors.green),
+              child: PageView.builder(
+                onPageChanged: (index) {
+                  setState(() {
+                    _selectedIndex = index;
+                  });
+                },
+                controller: PageController(viewportFraction: 0.7),
+                itemCount: cardItemsList.length,
+                itemBuilder: ((context, index) {
+                  // return BannerItem(appBanner: appBannerList[index]);
+                  return BannerItem(cardItem: cardItemsList[index]);
+                }),
+              ),
             ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ...List.generate(
-                cardItemsList.length,
-                (index) =>
-                    Indicator(isActive: _selectedIndex == index ? true : false),
-              )
-            ],
-          )
-        ],
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ...List.generate(
+                  cardItemsList.length,
+                  (index) =>
+                      Indicator(isActive: _selectedIndex == index ? true : false),
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

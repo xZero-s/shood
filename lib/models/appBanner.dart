@@ -16,7 +16,7 @@ class AppBanner {
 ]; */
 
 List<CardItem> cardItemsList = [
-  const CardItem(id: 1, title: 'Title 1', description: 'Description 1', imagePath: 'assets/images/animatedIllustrationCardSplashOneTime.gif'),
-  const CardItem(id: 2, title: 'Title 2', description: 'Description 2', imagePath: 'assets/images/animatedIllustrationCardSplash.gif'),
-  const CardItem(id: 3, title: 'Title 3', description: 'Description 3', imagePath: ''),
+  const CardItem(id: 1, title: 'Title 1', description: 'Description 1', imagePath: 'assets/images/animatedIllustrationCardSplashOneTime.gif', buttonText: 'Skip'),
+  const CardItem(id: 2, title: 'Title 2', description: 'Description 2', imagePath: 'assets/images/animatedIllustrationCardSplash.gif', buttonText: 'Skip'),
+  const CardItem(id: 3, title: 'Title 3', description: 'Description 3', imagePath: '', buttonText: 'Get Started'),
 ];
