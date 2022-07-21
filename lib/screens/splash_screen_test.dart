@@ -1,7 +1,5 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:shood/components/default_indicator_component.dart';
-import 'package:shood/models/appBanner.dart';
+import 'package:shood/components/splash_screen_item_component_test.dart';
 
 class SplashScreenTest extends StatefulWidget {
   const SplashScreenTest({ Key? key }) : super(key: key);
@@ -21,68 +19,11 @@ class _SplashScreenTestState extends State<SplashScreenTest> {
       decoration: const BoxDecoration(
         color: Colors.white,
       ),
-      child: Column(
-        children: <Widget>[
-          Flexible(
-            flex: 2,
-            child: Image.asset(
-              'assets/images/animatedIllustrationCardSplashOneTime.gif',
-              fit: BoxFit.contain,
-            ),
-          ),
-          Flexible(
-            flex: 1,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
-                Text(
-                  'Titolo Card',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.black87,
-                    decoration: TextDecoration.none
-                  ),
-                ),
-                Text(
-                  'descrizione card',
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.black38,
-                    decoration: TextDecoration.none
-                  ),
-                )
-              ],
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ...List.generate(
-                cardItemsList.length,
-                (index) =>
-                    Indicator(isActive:  _selectedIndex == index ? true : false),
-              )
-            ],
-          ),
-          ElevatedButton(
-            onPressed: () => log('CardItem Button Press!'),
-            style: ElevatedButton.styleFrom(
-              primary: Colors.blue,
-              onPrimary: Colors.grey
-            ),
-            child: const Text(
-              'Button',
-              style: TextStyle(
-                fontWeight: FontWeight.w500,
-                color: Colors.white,
-                decoration: TextDecoration.none,
-                fontSize: 15,
-              ),
-            ),
-          ),
-        ],
+      child: SplashScreenItemComponentTest(
+        selectedIndex: _selectedIndex, 
+        title: 'Design System', 
+        description: 'Based on the estabilished wireframes and after user testing sessions, we have started building a dedicated Design System. That is both scalable and flexible.', 
+        image: 'assets/images/animatedIllustrationCardSplash.gif' // choose one time or infinity loop
       ),
     );
   }
