@@ -1,37 +1,33 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 
 class DefaultButton extends StatelessWidget {
   final String text;
   // variable for button action
 
-  const DefaultButton({
-    Key? key, 
-    required this.text
-    // add button action
-  })
-  : super(key: key);
+  const DefaultButton({Key? key, required this.text
+      // add button action
+      })
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 200.0,
-      height: 40.0,
+    return FractionallySizedBox(
+      widthFactor: 0.6,
       child: ElevatedButton(
-        onPressed: () => log('Login Button Press!'),
-        style: ElevatedButton.styleFrom(
-          primary: Colors.blue,
-          onPrimary: Colors.grey
-        ),
+        onPressed: () => log('Login button pressed!'),
+        style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0)))),
         child: Text(
           text,
           style: const TextStyle(
-            fontWeight: FontWeight.w500,
-            color: Colors.white,
-            decoration: TextDecoration.none,
-            fontSize: 15,
-          ),
+              fontFamily: 'OpenSans',
+              fontSize: 14.0,
+              fontWeight: FontWeight.w700,
+              color: Colors.white),
         ),
       ),
     );

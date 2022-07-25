@@ -20,7 +20,8 @@ class IconTitle extends StatelessWidget {
             shape: BoxShape.circle,
             image: DecorationImage(
               image: AssetImage(
-                  'assets/images/placeholder_image_logo.png'),
+                  'assets/images/placeholder_image_logo.png'
+                ),
               fit: BoxFit.cover
             ),
           )
